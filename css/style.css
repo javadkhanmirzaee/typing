@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+body,html{
+    display: grid;
+    text-align: center;
+    place-items: center;
+    height: 100%;
+    background: #485460;
+}
+.wrapper{
+    display: flex;
+}
+.static-text{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 100px;
+    margin-right: 10px;
+}
+.dynamic-text{
+    overflow: hidden;
+    height: 90px;
+}
+.dynamic-text li{
+    position: relative;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 600;
+    color: #ef5777;
+    margin-left: 10px;
+    text-align: justify;
+    margin-top: 6px;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+}
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+.dynamic-text li::after{
+    content: "";
+    background: #485460;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid #ef5777;
+    left: 0;
+    animation: typing 1.5s steps(10) infinite;
+}
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin:0px -35px 0 39px;
+    }
+}
